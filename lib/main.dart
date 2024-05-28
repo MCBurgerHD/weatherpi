@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:weatherpi/pages/data.dart';
 import 'package:weatherpi/pages/history.dart';
 import 'package:weatherpi/pages/home.dart';
 
@@ -21,8 +21,9 @@ class MyApp extends StatelessWidget {
         initialRoute: "/",
         debugShowCheckedModeBanner: false,
         routes: {
-          "/": (context) => Home(),
+          "/": (context) => const Home(),
           "/history": (context) => const History(),
+          "/data": (context) => const DataPage(),
         }
     );
   }

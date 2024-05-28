@@ -13,7 +13,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 
   late DateTime dateTime;
-  //late Data data;
+  late Data data;
   DataService dataService = DataService();
 
     /*@override
@@ -27,6 +27,7 @@ class _HomeState extends State<Home> {
     Widget build(BuildContext context) {
       return Scaffold(
         appBar: AppBar(
+          leading: Image.asset("weatherPI.jpeg"),
           title: const Text('WeatherPI'),
           backgroundColor: Colors.lightGreen,
           actions: [

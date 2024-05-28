@@ -8,7 +8,7 @@ from datetime import datetime
 sense = SenseHat()
 
 # Firebase Realtime Database URL
-firebase_url = 'https://weatherpi-4a79b-default-rtdb.europe-west1.firebasedatabase.app/'
+firebase_url = 'https://weatherpi-4a79b-default-rtdb.europe-west1.firebasedatabase.app/data/'
 
 while True:
 # Daten lesen
@@ -30,7 +30,7 @@ while True:
     json_data = json.dumps(data)
 
     # HTTP POST Request an Firebase senden
-    response = requests.post(firebase_url + str(int(time.time())) + ".json", json=data)
+    response = requests.put(firebase_url + str(currentTime) + ".json", json=data)
 
     # Antwort überprüfen
     if response.status_code == 200:
