@@ -38,6 +38,10 @@ class _DataPageState extends State<DataPage> {
               'Pressure: ${data.pressure} hPa',
                 style: const TextStyle(fontSize: 20),
             ),
+            Text(
+              'Direction: ${data.direction}',
+              style: const TextStyle(fontSize: 20),
+            ),
           ],
         ),
       ),

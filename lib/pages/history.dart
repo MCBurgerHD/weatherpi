@@ -24,23 +24,23 @@ class _HistoryState extends State<History> {
     getData();
   }
 
-
   @override
   Widget build(BuildContext context) {
+    Data data;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.lightGreen,
         title: const Text("Historic Data"),
       ),
-      body: Expanded(
+      body: Center(
             child: ListView.builder(
                 itemCount: created.length,
                 itemBuilder: (context, index) {
-                  final data = created.elementAt(index);
+                    data = created.elementAt(index);
 
                   return GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, "/data");
+                        Navigator.pushNamed(context, "/data", arguments: data);
                       },
                       child: Container(
                           margin: const EdgeInsets.fromLTRB(

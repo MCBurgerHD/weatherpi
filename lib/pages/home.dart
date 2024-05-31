@@ -13,18 +13,16 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 
   late DateTime dateTime;
-  late Data data;
+  late Data data = Data.defaultData();
   DataService dataService = DataService();
 
-    /*@override
-    Future<void> initState() async {
-      super.initState();
-      dateTime = DateTime.now();
-      data = await DataService().getData(dateTime);
-    }*/
+  Future<void> getData(uid) async {
+    data = await DataService().getData(uid);
+  }
 
     @override
     Widget build(BuildContext context) {
+    getData(DateTime.now());
       return Scaffold(
         appBar: AppBar(
           leading: Image.asset("weatherPI.jpeg"),
@@ -36,24 +34,21 @@ class _HomeState extends State<Home> {
             }, icon: const Icon(Icons.history))
           ],
         ),
-        body: const Center(
+        body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
-                /*'Temperature: ${data.temperature}°C',
-                style: const TextStyle(fontSize: 20),*/
-                "Tempreature"
+                'Temperature: ${data.temperature}°C',
+                style: const TextStyle(fontSize: 20),
               ),
               Text(
-                /*'Humidity: ${data.humidity}%',
-                style: const TextStyle(fontSize: 20),*/
-                "Humidity"
+                'Humidity: ${data.humidity}%',
+                style: const TextStyle(fontSize: 20),
               ),
               Text(
-                /*'Pressure: ${data.pressure} hPa',
-                style: const TextStyle(fontSize: 20),*/
-                "Pressure"
+                'Pressure: ${data.pressure} hPa',
+                style: const TextStyle(fontSize: 20),
               ),
             ],
           ),
