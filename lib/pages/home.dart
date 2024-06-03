@@ -17,7 +17,7 @@ class _HomeState extends State<Home> {
   DataService dataService = DataService();
 
   Future<void> getData(uid) async {
-    data = await DataService().getData(uid);
+    data = (await DataService().getData(uid)) as Data;
   }
 
     @override

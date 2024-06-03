@@ -17,10 +17,10 @@ class Data {
 
   Data.defaultData() {
     time = DateTime.now().toString();
-    temperature = 0;
-    humidity = 0;
-    pressure = 0;
-    direction = "";
+    temperature = 34.09;
+    humidity = 36.93;
+    pressure = 992.05;
+    direction = "SouthEast";
   }
 
   Map<String, dynamic> toJson() {
